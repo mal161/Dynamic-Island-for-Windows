@@ -58,6 +58,15 @@ A smooth, interactive overlay for your desktop, inspired by Apple's Dynamic Isla
 
 ## ✨ What it does
 
+**🆕 Coming in the next update:**
+
+- ⏯️ **Media-Key Peek:** Press a media key on your keyboard and the player pops open on the island for a moment.
+- 🍅 **Pomodoro Runs:** Chain focus sessions and breaks automatically from the Focus Timer menu.
+- 🔎 **Song Result Actions:** Open an identified song on Shazam, search it on Spotify, YouTube Music or YouTube, or copy it.
+- 🔔 **Actionable Notifications:** Click a notification to open the app that sent it; middle-click to clear it from Action Center.
+- 📋 **Clipboard History Tab:** Your last 25 text copies, one click to copy again. Memory only, and private copies from password managers are skipped.
+- 🎛️ **Quick Toggles Tab:** Wi-Fi, Bluetooth and mute switches, plus shortcuts to Do Not Disturb and Night light settings.
+
 **🚀 New Features (Added in Latest Update):**
 
 - 🎤 **Live Lyrics:** Switch on "Show lyrics on collapsed island" from the right-click menu to see the current line pan across the pill as it is sung.

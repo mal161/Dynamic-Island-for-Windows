@@ -4,6 +4,32 @@ All notable changes, enhancements, and bug fixes for **Dynamic Island for Window
 
 ---
 
+## [Unreleased]
+
+### ✨ New Features
+
+- **Media-key peek** (`Modules.MediaKeyPeek`, on by default): pressing play/pause, next, previous or stop on the keyboard opens the player on the island for about 3 seconds, even with auto-expand off.
+- **Pomodoro auto-cycle:** a new *Start Pomodoro* entry in the Focus Timer menu chains several focus sessions with short breaks and a long break at the end. Session count and lengths are in Mod Settings, and the pill shows *Focus 2/4*, *Long Break* and *Pomodoro Complete*.
+- **Song recognition actions** (`Modules.SongIdClickAction`): a click on an identified song can open it on Shazam, search Spotify, YouTube Music or YouTube, or copy "Artist - Title". All of them are also in a new *Identified song* right-click submenu.
+- **Real icons for Store media apps:** Store/UWP players (Media Player, Spotify from the Store, Apple Music) now show their own icon in the source dock instead of a letter badge.
+- **Notification click actions** (`Modules.NotificationClickAction`): a left click on a notification opens the app that sent it. A middle click dismisses it and also clears it from Action Center.
+- **Clipboard history tab** (`Modules.ClipboardHistory`, off by default): the last 25 text copies, newest first. Click one to copy it again. Kept in memory only, never written to disk, and copies that password managers mark as private are never recorded.
+- **Quick toggles tab** (`Modules.QuickToggles`, off by default): Wi-Fi, Bluetooth and mute switches, plus shortcuts to the Do Not Disturb and Night light settings. Windows has no public API for apps to flip those last two directly.
+
+### 🐛 Fixes
+
+- Emoji and other characters outside the Basic Multilingual Plane no longer vanish from lyrics, song titles and Quick Lookup results.
+- Synced lyrics with three-digit timestamps (`[00:12.345]`) are no longer shown ten times too late.
+- A fullscreen app on another monitor no longer hides the island on its own monitor.
+- The low battery alert now fires when the level crosses 20% or 10%, not only when a poll lands exactly on those values.
+- The Hardware Monitor disk card reads the Windows system drive instead of assuming `C:\`.
+- Weather requests now time out instead of stalling the weather thread on a dead network.
+- The hide/show hotkey accepts Space and F1-F12, like the other two hotkeys.
+- Fixed a race where a settings save could free the font name while the island was measuring text.
+- The Focus Timer menu is disabled while the Focus Timer module is off.
+
+---
+
 ## [1.4.0] — 2026-10-20
 
 ### ✨ New Features
