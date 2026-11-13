@@ -1,10 +1,10 @@
 // ==WindhawkMod==
-// @id              dynamic-island-for-windows
-// @name            Dynamic Island for Windows
-// @description     A living, breathing pill overlay inspired by iPhone's Dynamic Island. Reacts to media, downloads, clipboard, battery, and more.
-// @version         1.4.0
-// @author          Himanshu
-// @github          https://github.com/devcode90
+// @id              dynamic-island-community-edition
+// @name            Dynamic Island Community Edition
+// @description     Dynamic Island for Windows with extra fixes and features: clipboard history, quick toggles, Pomodoro, media-key peek and more.
+// @version         1.0.0
+// @author          mal161
+// @github          https://github.com/mal161
 // @include         windhawk.exe
 // @compilerOptions -lole32 -loleaut32 -lshcore -ld2d1 -ldwrite -ldwmapi -lgdi32 -luser32 -lshell32 -lruntimeobject -lwindowscodecs -lsetupapi -lwinhttp -lpdh -lwinmm
 // @license         MIT
@@ -12,7 +12,30 @@
 
 // ==WindhawkModReadme==
 /*
-# Dynamic Island for Windows
+# Dynamic Island Community Edition
+
+> **Based on [Dynamic Island for Windows](https://windhawk.net/mods/dynamic-island-for-windows) by Himanshu ([devcode90](https://github.com/devcode90)) and its contributors**, used under the MIT license (see *License* at the end).
+> This edition adds the fixes and features below, which have also been offered to the original mod as pull requests. Run either this mod or the original, not both, or you'll get two islands.
+
+## 🆕 What's different in the Community Edition
+
+New features (the two new tabs are off by default; turn them on under **Mod Settings > Modules**):
+- **Clipboard history tab:** your last 25 text copies, newest first. Click a row to copy it again. Copies that password managers mark as private are never recorded.
+- **Controls tab (quick toggles):** Wi-Fi, Bluetooth and Sound switch directly; **Focus** switches Do Not Disturb directly (*experimental*: Windows has no public API for it, so if a Windows update breaks it, the button opens Settings instead); Night light opens Settings.
+- **Pomodoro:** right-click > Focus Timer > Start Pomodoro runs focus sessions and short/long breaks automatically. Lengths and session count are in Mod Settings.
+- **Media-key peek:** pressing Play/Pause, Next, Previous or Stop briefly opens the player.
+- **Song recognition actions:** right-click > Identified song opens the result on Shazam, searches Spotify, YouTube Music or YouTube, or copies "Artist - Title".
+- **Notification click actions:** click a notification pill to open the app that sent it; middle-click clears it from Action Center.
+- **Real icons for Store media apps** (Media Player, Spotify from the Store, ...) in the media source dock.
+
+Fixes:
+- No more stale "ghost" pill left behind after the island splits into two pills.
+- Quick successive copies are no longer dropped from the copy pill and the history.
+- Muting or switching Do Not Disturb from the Controls tab no longer closes the tab.
+- Wi-Fi shows its real state even when Windows' radio API leaves it out for Windhawk.
+- Emoji in lyrics/JSON, LRC millisecond timestamps, multi-monitor fullscreen detection, the battery alert and other issues found in a code audit.
+
+---
 
 A fluid, living overlay inspired by Apple's Dynamic Island, bringing a beautiful, highly-responsive UI to your Windows desktop. Built natively with hardware-accelerated Direct2D rendering for a buttery-smooth 60 FPS experience.
 
@@ -93,11 +116,13 @@ The Dynamic Island intelligently expands to display context-aware dashboards. Yo
 ## 📝 Feedback & Credits
 
 ### Feedback / Support / Bug Reports
-- Please use [Windhawk Mods Issues](https://github.com/ramensoftware/windhawk-mods/issues) or [dynamic-island-for-windows issues](https://github.com/devcode90/dynamic-island-for-windows/issues) to report bugs, request features, or share feedback.
+- Please use [Windhawk Mods Issues](https://github.com/ramensoftware/windhawk-mods/issues) and mention **Dynamic Island Community Edition** to report bugs, request features, or share feedback. Problems that also happen in the original mod belong on [Dynamic Island for Windows issues](https://github.com/devcode90/Dynamic-Island-for-Windows/issues).
 - Clear descriptions, screenshots, or steps to reproduce help improve fixes and updates.
 - Suggestions for UI/UX or new integrations are always welcome.
 
 ### Credits
+- **[Himanshu (devcode90) @GitHub](https://github.com/devcode90)**: Original author of Dynamic Island for Windows, which this edition is built on.
+- **[mal161 @GitHub](https://github.com/mal161)**: Community Edition: clipboard history, quick toggles, Pomodoro, media-key peek, song recognition actions, notification click actions, Store app icons, and the fixes listed at the top.
 - **[Sarthak Singh (sarthakaksh) @GitHub](https://github.com/sarthakaksh)**: Major feature overhaul including smoothing animations, right-click focus timer, strip mode, lyrics for songs, song recognition (Shazam) , quick lookup, Cross-Source Media Switching, hover clock, robust media controls, zero-CPU instant hide shortcut, Bluetooth battery integration, image clipboard thumbnails, and full-screen autohide fixes.
 - **[ciizerr @GitHub](https://github.com/ciizerr)**: Improved the UI by refining layout alignment, fixing dashboard scaling, and enhancing calendar and weather module integration.
 - **[ChrisSch-dev @GitHub](https://github.com/ChrisSch-dev)**: Added album title support, word wrapping for weather descriptions, sleep resume fixes, and various performance/movement stability improvements.
@@ -106,10 +131,18 @@ The Dynamic Island intelligently expands to display context-aware dashboards. Yo
 - **[Retr0dev-jpg @GitHub](https://github.com/Retr0dev-jpg)**: Event-driven volume flyout with animated bar and default device switching, plus a calendar that follows the Windows locale for weekday initials and first day of the week (with a Monday/Sunday override).
 
 ### 🤝 Contributing
-We love community contributions! To ensure high-quality updates, please follow these rules:
-1. **Fork & Branch:** Fork the repository and apply your feature or fix.
-2. **Respect Existing Features:** Do not outright remove or break other people's features unless fully explained why in your PR. You are highly encouraged to refine and improve existing features!
-3. **Credit Yourself:** After completing your feature, add your name and a short summary of your contribution to the **Credits** section in both the Mod UI here and the GitHub `README.md`!
+Contributions to the shared code are best sent to the original project, [devcode90/Dynamic-Island-for-Windows](https://github.com/devcode90/Dynamic-Island-for-Windows), so every user benefits; this edition picks them up from there.
+
+### License
+MIT License
+
+Copyright (c) 2026 devcode90
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 */
 // ==/WindhawkModReadme==
@@ -7699,7 +7732,7 @@ DWORD WINAPI WeatherThreadProc(void*) {
 // ── Lyrics (LRCLIB, https://lrclib.net) ──────────────────────────────────────
 // User-Agent sent to LRCLIB.
 constexpr wchar_t kLyricsUserAgent[] =
-    L"DynamicIslandForWindows/" WH_MOD_VERSION L" (https://github.com/devcode90/Dynamic-Island-for-Windows)";
+    L"DynamicIslandCommunityEdition/" WH_MOD_VERSION L" (https://github.com/mal161/Dynamic-Island-for-Windows)";
 
 bool IsUrlSafeChar(unsigned char c) {
     return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') ||
@@ -10659,7 +10692,7 @@ int LookupRowAtContentPoint(const MediaContentPoint& pt, int rowCount, bool head
 
 // Wikimedia asks API clients to send a descriptive User-Agent with contact info.
 constexpr wchar_t kLookupUserAgent[] =
-    L"DynamicIslandForWindows/" WH_MOD_VERSION L" (https://github.com/devcode90/Dynamic-Island-for-Windows) QuickLookup";
+    L"DynamicIslandCommunityEdition/" WH_MOD_VERSION L" (https://github.com/mal161/Dynamic-Island-for-Windows) QuickLookup";
 
 // Bumped for every new request AND when the card is dismissed. A worker only
 // publishes if its id is still current, so a slow reply can never resurrect a card
@@ -23868,7 +23901,7 @@ DWORD WINAPI MouseThreadProc(void*) {
 // The shelf survives restarts. Only *references* are stored (a path per file,
 // the text for pasted snippets) -- never copies of the files themselves.
 //
-//   %LOCALAPPDATA%\DynamicIslandForWindows\filetray\items.dat
+//   <mod storage>\filetray\<user>\items.dat
 //
 // Layout (UTF-8, one item per line, oldest first):
 //   DIWFT 1
